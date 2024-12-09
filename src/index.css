@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Harry P";
+  src: url("/public/assets/HarryP-MVZ6w.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, 
+    #c963e8 20%,  
+    #6dc8ef 40%,  
+    #e4ea8f 60%,  
+    #eb7d91 80%,  
+    #f748c2);
+  background-size: 300% 300%;
+  animation: backgroundMagic 10s ease infinite;
+  font-family: "Harry P", serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+@keyframes backgroundMagic {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#phaser-container {
+  margin: 20px auto;
+  border: 3px solid #ccc;
+  width: 100%;
+  max-width: 800px;  /* Max width for larger screens */
+  height: auto;
+  aspect-ratio: 4 / 3;  /* Maintain a 4:3 aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Harry P", serif;
+  box-sizing: border-box;  /* Include padding and borders in element's total width and height */
+}
+
+/* Text styles */
+.text {
+  text-align: center;
+  font-family: "Harry P", serif;
+  color: azure;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens (e.g., mobile) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;  /* Adjust font size for smaller screens */
+  }
+
+  #phaser-container {
+    width: 90%;  /* Make container take up more width on small screens */
+    max-width: 90%;  /* Max width of container */
+    aspect-ratio: 16 / 9;  /* Adjust the aspect ratio for small screens */
+  }
+
+  .text {
+    font-size: 18px;  /* Reduce text size for smaller screens */
+  }
+}
+
+/* For medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;  /* Adjust font size for medium screens */
+  }
+
+  #phaser-container {
+    width: 85%;  /* Make container slightly smaller than for larger screens */
+    max-width: 700px;  /* Max width for medium screens */
+  }
+
+  .text {
+    font-size: 20px;  /* Adjust text size for tablets */
+  }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;  /* Default font size for large screens */
+  }
+
+  #phaser-container {
+    width: 800px;  /* Keep container fixed size for larger screens */
+    height: auto;
+    aspect-ratio: 4 / 3;  /* Maintain aspect ratio */
+  }
+
+  .text {
+    font-size: 24px;  /* Adjust text size for larger screens */
+  }
+}
